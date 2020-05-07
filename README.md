@@ -2,6 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
 
+## Setting up
+
+1. Clone the repo locally and navigate to the directory.
+2. Install npm and node globally. Ignore if already installed.
+3. Run `npm install` in a Terminal/Power Shell/Git Bash window to install the npm dependancies locally.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
