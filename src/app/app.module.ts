@@ -15,7 +15,8 @@ import {
   MatInputModule,
   MatCardModule,
   MatPaginatorModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+  MatButtonModule
 } from "@angular/material";
 import { HttpClientModule } from "@angular/common/http";
 import { PaginatePipe } from "./services/paginate.pipe";
@@ -40,7 +41,8 @@ import { PaginatePipe } from "./services/paginate.pipe";
     MatCardModule,
     MatPaginatorModule,
     HttpClientModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

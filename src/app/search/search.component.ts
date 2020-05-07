@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
-import { FormControl } from "@angular/forms";
+import { FormControl, Validators } from "@angular/forms";
 import { Subscription, Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { Router } from "@angular/router";
@@ -13,7 +13,7 @@ import { DataService } from "../services/data.service";
 export class SearchComponent implements OnInit, OnDestroy {
   constructor(public router: Router, private server: DataService) {}
 
-  searchInput: FormControl = new FormControl("");
+  searchInput: FormControl = new FormControl("", [Validators.required]);
   tagResults: Observable<string[]>;
   subscriptions: Subscription[] = [];
   allTags: string[] = [];

@@ -22,4 +22,14 @@
       </mat-option>
     </mat-autocomplete>
   </mat-form-field>
+  <button
+    mat-button
+    (click)="
+      router.navigate(['search'], { queryParams: { tag: searchInput.value } })
+    "
+    color="primary"
+    [disabled]="searchInput.invalid"
+  >
+    Search
+  </button>
 </div>
