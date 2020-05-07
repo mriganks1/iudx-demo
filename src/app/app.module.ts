@@ -18,7 +18,7 @@ import {
   MatProgressSpinnerModule
 } from "@angular/material";
 import { HttpClientModule } from "@angular/common/http";
-import { PaginatePipe } from "./paginate.pipe";
+import { PaginatePipe } from "./services/paginate.pipe";
 
 @NgModule({
   declarations: [

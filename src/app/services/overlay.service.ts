@@ -5,7 +5,7 @@ import { BehaviorSubject, Observable, Subject } from "rxjs";
   providedIn: "root"
 })
 export class OverlayService {
-  private loader: Subject<boolean> = new Subject();
+  private loader: BehaviorSubject<boolean> = new BehaviorSubject(true);
   public loader$: Observable<boolean> = this.loader.asObservable();
 
   constructor() {}

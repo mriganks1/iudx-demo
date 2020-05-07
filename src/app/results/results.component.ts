@@ -2,8 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { Observable } from "rxjs";
 import { ActivatedRoute } from "@angular/router";
 import { switchMap, catchError, tap } from "rxjs/operators";
-import { DataService, TagResults } from "../data.service";
-import { OverlayService } from "../overlay.service";
+import { DataService, TagResults } from "../services/data.service";
+import { OverlayService } from "../services/overlay.service";
 
 @Component({
   selector: "app-results",

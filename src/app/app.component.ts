@@ -1,8 +1,8 @@
 import { Component } from "@angular/core";
-import { OverlayService } from "./overlay.service";
+import { OverlayService } from "./services/overlay.service";
 import { trigger, transition, style, animate } from "@angular/animations";
 import { Observable } from "rxjs";
-import { startWith } from "rxjs/operators";
+import { startWith, delay } from "rxjs/operators";
 
 @Component({
   selector: "app-root",
@@ -29,7 +29,5 @@ import { startWith } from "rxjs/operators";
 export class AppComponent {
   title = "iudx-tags-catalogue";
   constructor(public overlay: OverlayService) {}
-  public loader: Observable<boolean> = this.overlay.loader$.pipe(
-    startWith(true)
-  );
+  public loader: Observable<boolean> = this.overlay.loader$.pipe(delay(0));
 }

@@ -1,7 +1,8 @@
 import { Injectable } from "@angular/core";
 import Globals from "./global";
 import { HttpClient } from "@angular/common/http";
-import { map } from "rxjs/operators";
+import { of } from "rxjs";
+import { tap } from "rxjs/operators";
 
 interface TagObject {
   type: string;
@@ -22,13 +23,26 @@ export interface TagResults {
   providedIn: "root"
 })
 export class DataService {
-  BASE_URL = Globals.api;
+  private BASE_URL = Globals.api;
 
   constructor(private http: HttpClient) {}
 
   getTagResults(str) {
-    return this.http.get<TagResults[]>(this.BASE_URL + "search", {
+    return this.http.get<TagResults[]>(this.BASE_URL + "v1/search", {
       params: { "attribute-name": "(tags)", "attribute-value": `(${str})` }
     });
+  }
+
+  tagsList: string[] = [];
+  getTags() {
+    if (this.tagsList.length > 0) return of(this.tagsList);
+    else
+      return this.http
+        .get<string[]>(this.BASE_URL + "internal_apis/list/tags")
+        .pipe(
+          tap(tags => {
+            this.tagsList = tags;
+          })
+        );
   }
 }
