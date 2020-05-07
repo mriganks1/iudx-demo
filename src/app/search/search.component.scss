@@ -1,0 +1,14 @@
+.search-wrapper {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  .search-dropdown {
+    position: absolute;
+    width: 100%;
+    max-height: 250px;
+  }
+}

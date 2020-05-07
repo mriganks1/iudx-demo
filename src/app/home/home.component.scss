@@ -1,0 +1,19 @@
+.home-wrapper {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  height: 100%;
+  .description {
+    margin: 16px 0px;
+    font-weight: lighter;
+  }
+}
+@media screen and (max-width: 768px) {
+  .home-wrapper {
+    .description {
+      font-size: 18px;
+      text-align: center;
+      font-weight: normal;
+    }
+  }
+}

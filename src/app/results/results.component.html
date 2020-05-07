@@ -1,0 +1,37 @@
+<div class="container">
+  <app-search></app-search>
+  <div class="results-wrapper">
+    <div class="breadcrumbs">
+      <a [routerLink]="['/']">Home</a
+      ><span>&nbsp;/&nbsp;{{ tagName }} ({{ totalItems }} results )</span>
+    </div>
+    <div
+      class="resource"
+      *ngFor="
+        let resource of resourceList | async | paginate: pageNo:itemsPerPage
+      "
+    >
+      <mat-card class="mat-elevation-z5">
+        <mat-card-header>
+          <mat-card-title>{{ resource.resourceId.value }}</mat-card-title>
+          <mat-card-subtitle
+            >Last updated: {{ resource.updatedAt.value }}</mat-card-subtitle
+          >
+        </mat-card-header>
+        <mat-card-content>
+          <h2>{{ resource.itemDescription }}</h2>
+          <p class="resource-desc"><strong>ID:</strong> {{ resource.id }}</p>
+          <p class="resource-desc">
+            <strong>Onboarded by:</strong> {{ resource.onboardedBy }}
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <mat-paginator
+      [length]="totalItems"
+      [pageSize]="itemsPerPage"
+      (page)="pageChange($event)"
+    >
+    </mat-paginator>
+  </div>
+</div>

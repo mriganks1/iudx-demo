@@ -1,0 +1,25 @@
+<div class="search-wrapper">
+  <mat-form-field class="border-input">
+    <input
+      type="text"
+      matInput
+      [formControl]="searchInput"
+      [matAutocomplete]="results"
+      placeholder="Search tags"
+    />
+    <mat-hint>Eg. Air quality, Water, Noise, etc.</mat-hint>
+    <mat-autocomplete #results="matAutocomplete">
+      <mat-option
+        *ngFor="let option of tagResults | async"
+        [value]="option"
+        (onSelectionChange)="
+          router.navigate(['search'], { queryParams: { tag: option } })
+        "
+        [routerLink]="['/', 'search']"
+        [queryParams]="{ tag: option }"
+      >
+        {{ option }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</div>
