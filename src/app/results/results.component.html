@@ -15,7 +15,10 @@
         <mat-card-header>
           <mat-card-title>{{ resource.resourceId.value }}</mat-card-title>
           <mat-card-subtitle
-            >Last updated: {{ resource.updatedAt.value }}</mat-card-subtitle
+            >Last updated:
+            {{
+              resource.updatedAt.value | date: "dd MMM yyyy, hh:mm a"
+            }}</mat-card-subtitle
           >
         </mat-card-header>
         <mat-card-content>
