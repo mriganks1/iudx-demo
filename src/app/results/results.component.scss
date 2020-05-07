@@ -11,9 +11,22 @@
     font-size: 16px;
     margin: 0px 16px;
     line-height: 1.8;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   h2 {
     margin: 10px 16px;
     font-weight: normal;
+  }
+}
+@media screen and (max-width: 768px) {
+  .resource {
+    h2 {
+      font-size: 16px;
+    }
+    .resource-desc {
+      font-size: 14px;
+    }
   }
 }
